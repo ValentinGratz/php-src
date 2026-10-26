@@ -244,7 +244,7 @@ static zend_string *php_stream_http_response_headers_parse(php_stream_wrapper *w
 		}
 
 		/* Process folding headers if starting with a space or a tab. */
-		if (header_line && (*header_line == ' ' || *header_line == '\t')) {
+		if (*header_line == ' ' || *header_line == '\t') {
 			const char *http_folded_header_line = header_line;
 			size_t http_folded_header_line_length = *header_line_length;
 			/* Remove the leading white spaces. */
